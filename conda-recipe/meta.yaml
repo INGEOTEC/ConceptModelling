@@ -1,0 +1,34 @@
+package:
+  name: evomsa
+  version: "0.1"
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - scikit-learn
+  run:
+    - python
+
+test:
+    requires:
+        - nose
+        - numpy
+        - scipy
+        - scikit-learn
+        - gensim
+        - nltk
+        - coverage
+
+    imports:
+        - ConceptModelling
+
+    commands:
+        - python -c "import nltk; nltk.download('stopwords')"      
+        - nosetests --verbose -exe ConceptModelling
+
+
+about:
+  home: https://github.com/ingeotec/ConceptModelling
+  summary: ConceptModelling.
+  license: Apache

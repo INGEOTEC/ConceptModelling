@@ -1,0 +1,3 @@
+include ConceptModelling/data/es.affective.words.json
+include ConceptModelling/data/en.affective.words.json
+include ConceptModelling/data/ar.affective.words.json
