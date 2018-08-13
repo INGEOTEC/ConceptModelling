@@ -24,8 +24,7 @@ from nltk.stem.porter import PorterStemmer
 import numpy as np
 import json
 # import sys
-from EvoMSA.text_preprocessing import TextPreprocessing,  _OPTION_NONE
-# from EvoDAG.model import EvoDAGE
+from .text_preprocessing import TextPreprocessing,  _OPTION_NONE
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s')
 logger = logging.getLogger(__name__)
