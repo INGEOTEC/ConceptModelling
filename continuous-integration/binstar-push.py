@@ -2,6 +2,7 @@ import os
 import glob
 import subprocess
 import traceback
+import platform
 
 
 def get_token():
@@ -13,10 +14,10 @@ def get_token():
 
 token = get_token()
 if token is not None:
-    cmd = ['binstar', '-t', token, 'upload', '--force', '-u', 'ingeotec']
+    cmd = ['%CMD_IN_ENV%', 'binstar', '-t', token, 'upload', '--force', '-u', 'ingeotec']
     cmd.extend(glob.glob('*.tar.bz2'))
     try:
-        print('*', cmd)
+        print('*', cmd, platform.system())
         subprocess.check_call(cmd)
     except subprocess.CalledProcessError:
         traceback.print_exc()
