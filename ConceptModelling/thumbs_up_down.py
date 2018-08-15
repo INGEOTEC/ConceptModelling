@@ -50,7 +50,7 @@ class ThumbsUpDown(object):
         Initializes the parameters for specific language
         """
         self._text = os.getenv('TEXT', default='text')
-        self.languages = [_SPANISH, _ENGLISH, _ITALIAN, _GERMAN, _ARABIC]
+        self.languages = [_SPANISH, _ENGLISH, _ARABIC]
         self.lang = lang
         if self.lang not in self.languages:
             raise ("Language not supported: " + lang)
@@ -74,6 +74,7 @@ class ThumbsUpDown(object):
                 emo_file = self.lang[:2] + "." + _AFFECTIVE_FILE
             elif self.lang == _SPANISH:
                 emo_file = "es." + _AFFECTIVE_FILE
+            emo_file = os.path.join(PATH, 'data', emo_file)
         self.load_emotions(emo_file)
 
     def get_text(self, text):

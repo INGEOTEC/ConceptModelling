@@ -15,10 +15,8 @@
 
 
 def test_ThumbsUpDown():
-    import os
     from ConceptModelling.thumbs_up_down import ThumbsUpDown
-    from ConceptModelling.thumbs_up_down import _SPANISH, PATH
-    fname = os.path.join(PATH, 'data', 'es.affective.words.json')
-    thumbs = ThumbsUpDown(file_name=fname, lang=_SPANISH, stemming=False)
+    from ConceptModelling.thumbs_up_down import _SPANISH
+    thumbs = ThumbsUpDown(lang=_SPANISH, stemming=False)
     _ = thumbs['adoracion XxX fervor vergazo']
     assert _ == (2, 1)
