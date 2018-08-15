@@ -14,7 +14,7 @@ def get_token():
 
 token = get_token()
 if token is not None:
-    cmd = ['binstar', '-t', token, 'upload', '--force', '-u', 'ingeotec']
+    cmd = ['upload', '-t', token, '--force', '-u', 'ingeotec']
     cmd.extend(glob.glob('*.tar.bz2'))
     cli.main(args=cmd)
     # try:
