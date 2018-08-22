@@ -8,6 +8,7 @@ env:
   matrix:
     - python=3.5  CONDA_PY=35  
     - python=3.6  CONDA_PY=36
+    - python=3.7  CONDA_PY=37    
 
   global:
     - secure: "X35iAaYPyrxjVwABOPcxkgj/dttGnW6gIRpYOsNbvCtyECKmRnfSuvtC4PVuFi8Y2oJQQE5kZxEsTiwOx1TXirizPwBY1wvxvU9wl1JE3bvqwSKE3x5C3mbj1pu5NjDjNYnU87aNMHdyHv31C9Ekn/yrrtLv613+HwueMqicZMZnTrF5gQKhp6u+YzaKEtW70//txpvz9BV5VW2cmZ7t1Hw+Lie6Atb/YGNf8PrJ3ObZtJOa0SREbNie6klfueXK3aEZud3WEJT9lagARoOp1t6U4Wu6+Ackzgos+H5j54ClvJPgLP6GvXktasBHv5LNudgW5urVHsuze3CBuXogZJXnCTT4menS1WqkiS7fRS5PmNBTzcRQcHUDCryntxzWeBnPA8czRxClXgtGZGn9gLkhZdbHOVMMBWI22uKA6faoCCdn6/2rgE5YDe7t4SvOYtNc2CQBuJCkRXCp3dMfBUh7FgOit54IfZ378J8NGdRHMmbmoymrlAI3el71GEOMzXFQjCfpowOzuyZ1l+mwowe9hu19LDGr3/mA243KceUIxQBUahqHNeIVAN5iARelOLK/k3xoTHt5Gt984rsRmL/3NICaeSYAqwnPCAISo+0lMkRmWIDlGlZiVCKB/goRIeLlZPuC7ZNPe5GoVJKC3s/uTN4PzGjh8f63rJi8+wY="
@@ -37,10 +38,12 @@ script:
   - python -c "import nltk; nltk.download('stopwords')"
   - if [ $python = 3.6 ]; then coverage run setup.py nosetests; fi
   - if [ $python = 3.5 ]; then nosetests --verbose -exe ConceptModelling; fi
+  - if [ $python = 3.7 ]; then nosetests --verbose -exe ConceptModelling; fi  
 
 after_success:
   - if [ $python = 3.6 ]; then coveralls || echo "Coveralls upload failed"; fi
   - if [ $TRAVIS_BRANCH = "master" -a $python = 3.6 ]; then python setup.py sdist; pip install twine; twine upload -u mgraffg -p $TWINE dist/*.tar.gz; fi
+  - if [ $TRAVIS_BRANCH = "master" ]; then python setup.py bdist_wheel; pip install twine; twine upload -u mgraffg -p $TWINE dist/*.whl; fi  
   - if [ $TRAVIS_BRANCH = "master" ]; then source deactivate; conda install --yes pip conda-build jinja2 anaconda-client; conda build conda-recipe --quiet; fi
   - python continuous-integration/move-conda-package.py conda-recipe  
   - which binstar
