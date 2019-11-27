@@ -1,7 +1,7 @@
 environment:
   # See README for information on the token
   BINSTAR_TOKEN:
-    secure: Z2HheE7qyOO1n0C9j/TiGyOzEVAdy+KTRL4wg7Gwlxo+ziUJq+I0gzjTPJkOw4Aa  
+    secure: FU5GdoruzB7YIvgFGqewEPvLiKhu8nY9m92egLN6lAFeIj+dlkKm5zBeRzmAM35G
 
   global:
     # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
@@ -24,6 +24,12 @@ environment:
       PYTHON_VERSION: "3.7"
       PYTHON_ARCH: "64"
       CONDA_PY: "37"
+
+    - PYTHON: "C:\\Python38_64"
+      PYTHON_VERSION: "3.8"
+      PYTHON_ARCH: "64"
+      CONDA_PY: "38"
+
 
 install:
   # this installs the appropriate Miniconda (Py2/Py3, 32/64 bit),
