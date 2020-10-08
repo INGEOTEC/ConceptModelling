@@ -1,6 +1,6 @@
 package:
   name: conceptmodelling
-  version: "0.1.1"
+  version: "0.1.2"
 
 requirements:
   build:
@@ -16,7 +16,7 @@ test:
         - numpy
         - scipy
         - scikit-learn
-        - gensim
+        # - gensim
         - nltk
         - coverage
 
