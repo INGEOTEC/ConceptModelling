@@ -24,7 +24,7 @@ before_install:
   - export PATH=$HOME/miniconda3/bin:$PATH
   - conda update --yes conda
 #  - conda create --yes -n ingeotec python=$python
-  - conda create --yes python=$python
+  - conda install python=$python
 #  - source activate ingeotec  
   - conda install --yes pip
   - pip install coverage
