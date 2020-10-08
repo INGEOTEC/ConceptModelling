@@ -16,7 +16,7 @@ test:
         - numpy
         - scipy
         - scikit-learn
-        - gensim
+        # - gensim
         - nltk
         - coverage
 
