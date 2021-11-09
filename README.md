@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.org/INGEOTEC/ConceptModelling.svg?branch=master)](https://travis-ci.org/INGEOTEC/ConceptModelling)
-[![Build Status](https://travis-ci.org/INGEOTEC/ConceptModelling.svg?branch=develop)](https://travis-ci.org/INGEOTEC/ConceptModelling)
-[![Build status](https://ci.appveyor.com/api/projects/status/s7msdh2mlscwbo3h?svg=true)](https://ci.appveyor.com/project/mgraffg/conceptmodelling)
-[![Build status](https://ci.appveyor.com/api/projects/status/s7msdh2mlscwbo3h/branch/master?svg=true)](https://ci.appveyor.com/project/mgraffg/conceptmodelling/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/INGEOTEC/ConceptModelling/badge.svg?branch=master)](https://coveralls.io/github/INGEOTEC/ConceptModelling?branch=master)
 [![Anaconda-Server Badge](https://anaconda.org/ingeotec/conceptmodelling/badges/version.svg)](https://anaconda.org/ingeotec/conceptmodelling)
 [![Anaconda-Server Badge](https://anaconda.org/ingeotec/conceptmodelling/badges/latest_release_date.svg)](https://anaconda.org/ingeotec/conceptmodelling)
